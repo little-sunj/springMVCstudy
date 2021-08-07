@@ -31,7 +31,7 @@ public class ResponseHeaderServlet extends HttpServlet {
 
         //[message body]
         PrintWriter writer = response.getWriter();
-        writer.println("ok");
+        writer.println("ok"); //println이라 자동은 3이 나옴 / print시 2
     }
 
     //content 편의 메서드
@@ -43,6 +43,7 @@ public class ResponseHeaderServlet extends HttpServlet {
 
     //cookie 편의 메서드
     private void cookie(HttpServletResponse response) {
+        //Set-Cookie : myCookie=good; Max-Age=600;
         Cookie cookie = new Cookie("myCookie", "goood");
         cookie.setMaxAge(600); //600초
         response.addCookie(cookie);
